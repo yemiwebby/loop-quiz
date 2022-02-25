@@ -22,7 +22,6 @@ export class QuestionController {
     @repository(QuestionRepository)
     public questionRepository: QuestionRepository,
   ) {}
-
   @get('/questions/count')
   @response(200, {
     description: 'Question model count',
@@ -31,7 +30,6 @@ export class QuestionController {
   async count(@param.where(Question) where?: Where<Question>): Promise<Count> {
     return this.questionRepository.count(where);
   }
-
   @get('/questions')
   @response(200, {
     description: 'Array of Question model instances',
@@ -49,7 +47,6 @@ export class QuestionController {
   ): Promise<Question[]> {
     return this.questionRepository.find(filter);
   }
-
   @get('/questions/{id}')
   @response(200, {
     description: 'Question model instance',
@@ -66,7 +63,6 @@ export class QuestionController {
   ): Promise<Question> {
     return this.questionRepository.findById(id, filter);
   }
-
   @del('/questions/{id}')
   @response(403, {
     description: 'Question DELETE not permitted',
