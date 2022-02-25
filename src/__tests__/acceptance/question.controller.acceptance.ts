@@ -25,8 +25,6 @@ describe('QuestionController', () => {
     expect(res.body).containEql({
       id: 2,
       difficulty: 'medium',
-      question:
-        'Which computer hardware device provides an interface for all other connected devices to communicate?',
       answer: 'Motherboard',
     });
   });
